@@ -129,17 +129,11 @@ CREATE TABLE PROFESSOR_MESTRADO (
 
 -- Povoamento da tabela CURSO
 INSERT INTO CURSO (Cod_Curso, Nome_Curso, Centro, Area) VALUES
-    (1, 'Curso A', 'Centro A', 'Area A'),
-    (2, 'Curso B', 'Centro B', 'Area B'),
-    (3, 'Curso C', 'Centro C', 'Area C');
+    (1, 'Curso A', 'CIN', 'Area A'),
+    (2, 'Curso B', 'CAC', 'Area B'),
+    (3, 'Curso C', 'CTG', 'Area C');
 
 -- Povoamento da tabela ALUNO
-    -- CPF_Aluno VARCHAR(11) PRIMARY KEY,
-    -- Nome_Aluno VARCHAR(8),
-    -- End_Rua VARCHAR(255),
-    -- End_CEP VARCHAR(8),
-    -- Cod_Curso INT NOT NULL,
-
 INSERT INTO ALUNO (CPF_Aluno, Nome_Aluno, End_Rua, End_CEP, Cod_Curso) VALUES
     ('12345678901', 'robson', 'Rua A', '12345678', 1),
     ('23456789012', 'matheus','Rua B', '23456789', 2),
@@ -176,10 +170,10 @@ INSERT INTO PARTICIPA (CPF_Aluno, Cod_Turma, Periodo) VALUES
     ('34567890123', 103, '2023/1');
 
 -- Povoamento da tabela DISCIPLINA
-INSERT INTO DISCIPLINA (Cod_Disciplina, Cod_Curso) VALUES
-    (1, 1),
-    (2, 2),
-    (3, 1);
+INSERT INTO DISCIPLINA (Cod_Disciplina, Sigla, Cod_Curso) VALUES
+    (1, 'SI',1),
+    (2, 'ES',2),
+    (3, 'CC',1);
 
 -- Povoamento da tabela PROJETO
 INSERT INTO PROJETO (Cod_Disciplina, numero) VALUES
