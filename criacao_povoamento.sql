@@ -115,7 +115,7 @@ CREATE TABLE DEPARTAMENTO (
 -- Tabela PROFESSOR_GRADUACAO
 CREATE TABLE PROFESSOR_GRADUACAO (
     CPF_Professor VARCHAR(11) PRIMARY KEY,
-    local_da_p�s VARCHAR(255)
+    local_da_pos VARCHAR(255)
 );
 
 -- Tabela PROFESSOR_MESTRADO
@@ -213,7 +213,7 @@ INSERT INTO DEPARTAMENTO (Cod_Departamento, CPF_Prof_chefe) VALUES
     (3, '76543210987');
 
 -- Povoamento da tabela PROFESSOR_GRADUACAO
-INSERT INTO PROFESSOR_GRADUACAO (CPF_Professor, local_da_p�s) VALUES
+INSERT INTO PROFESSOR_GRADUACAO (CPF_Professor, local_da_pos) VALUES
     ('11111111111', 'Universidade A'),
     ('22222222222', 'Universidade B');
 
