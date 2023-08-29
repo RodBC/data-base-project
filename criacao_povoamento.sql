@@ -1,11 +1,17 @@
+
+
 -- Tabela CURSO
 CREATE TABLE CURSO (
     Cod_Curso INT PRIMARY KEY
+    Nome_Curso VARCHAR(8),
+    Centro VARCHAR(8),
+    Area VARCHAR(8),
 );
 
 -- Tabela ALUNO
 CREATE TABLE ALUNO (
     CPF_Aluno VARCHAR(11) PRIMARY KEY,
+    Nome_Aluno VARCHAR(8),
     End_Rua VARCHAR(255),
     End_CEP VARCHAR(8),
     Cod_Curso INT NOT NULL,
@@ -34,7 +40,7 @@ CREATE TABLE INTERCLASSE (
 CREATE TABLE CONCORRE (
     Cod_Turma INT,
     ID_Comp INT,
-    Posi��o INT,
+    Posicao INT,
     PRIMARY KEY (Cod_Turma, ID_Comp),
     FOREIGN KEY (Cod_Turma) REFERENCES TURMA(Cod_Turma),
     FOREIGN KEY (ID_Comp) REFERENCES INTERCLASSE(ID_Comp)
@@ -42,14 +48,14 @@ CREATE TABLE CONCORRE (
 
 -- Tabela PREMIO
 CREATE TABLE PREMIO (
-    Posi��o INT PRIMARY KEY
+    Posicao INT PRIMARY KEY
 );
 
 -- Tabela PARTICIPA
 CREATE TABLE PARTICIPA (
     CPF_Aluno VARCHAR(11),
     Cod_Turma INT,
-    Per�odo VARCHAR(255),
+    Periodo VARCHAR(255),
     PRIMARY KEY (CPF_Aluno, Cod_Turma),
     FOREIGN KEY (CPF_Aluno) REFERENCES ALUNO(CPF_Aluno),
     FOREIGN KEY (Cod_Turma) REFERENCES TURMA(Cod_Turma)
@@ -58,6 +64,7 @@ CREATE TABLE PARTICIPA (
 -- Tabela DISCIPLINA
 CREATE TABLE DISCIPLINA (
     Cod_Disciplina INT PRIMARY KEY,
+    Sigla VARCHAR(8),
     Cod_Curso INT,
     FOREIGN KEY (Cod_Curso) REFERENCES CURSO(Cod_Curso)
 );
@@ -65,18 +72,18 @@ CREATE TABLE DISCIPLINA (
 -- Tabela PROJETO
 CREATE TABLE PROJETO (
     Cod_Disciplina INT,
-    n�mero INT,
-    PRIMARY KEY (Cod_Disciplina, n�mero),
+    numero INT,
+    PRIMARY KEY (Cod_Disciplina, numero),
     FOREIGN KEY (Cod_Disciplina) REFERENCES DISCIPLINA(Cod_Disciplina)
 );
 
 -- Tabela PERTENCE
 CREATE TABLE PERTENCE (
     Cod_Disciplina INT,
-    n�mero INT,
+    numero INT,
     CPF_Aluno VARCHAR(11),
-    PRIMARY KEY (Cod_Disciplina, n�mero, CPF_Aluno),
-    FOREIGN KEY (Cod_Disciplina, n�mero) REFERENCES PROJETO(Cod_Disciplina, n�mero),
+    PRIMARY KEY (Cod_Disciplina, numero, CPF_Aluno),
+    FOREIGN KEY (Cod_Disciplina, numero) REFERENCES PROJETO(Cod_Disciplina, numero),
     FOREIGN KEY (CPF_Aluno) REFERENCES ALUNO(CPF_Aluno)
 );
 
@@ -117,19 +124,26 @@ CREATE TABLE PROFESSOR_MESTRADO (
     local_do_mestrado VARCHAR(255)
 );
 
----------------------fim de criação e começo de povoamento--------------------------------------------------
+
+-----------------------------------------------FIM DE CRIAÇÃO E COMEÇO DE POVOAMENTO
 
 -- Povoamento da tabela CURSO
-INSERT INTO CURSO (Cod_Curso) VALUES
-    (1),
-    (2),
-    (3);
+INSERT INTO CURSO (Cod_Curso, Nome_Curso, Centro, Area) VALUES
+    (1, 'Curso A', 'Centro A', 'Area A'),
+    (2, 'Curso B', 'Centro B', 'Area B'),
+    (3, 'Curso C', 'Centro C', 'Area C');
 
 -- Povoamento da tabela ALUNO
-INSERT INTO ALUNO (CPF_Aluno, End_Rua, End_CEP, Cod_Curso) VALUES
-    ('12345678901', 'Rua A', '12345678', 1),
-    ('23456789012', 'Rua B', '23456789', 2),
-    ('34567890123', 'Rua C', '34567890', 1);
+    -- CPF_Aluno VARCHAR(11) PRIMARY KEY,
+    -- Nome_Aluno VARCHAR(8),
+    -- End_Rua VARCHAR(255),
+    -- End_CEP VARCHAR(8),
+    -- Cod_Curso INT NOT NULL,
+
+INSERT INTO ALUNO (CPF_Aluno, Nome_Aluno, End_Rua, End_CEP, Cod_Curso) VALUES
+    ('12345678901', 'robson', 'Rua A', '12345678', 1),
+    ('23456789012', 'matheus','Rua B', '23456789', 2),
+    ('34567890123', 'campos','Rua C', '34567890', 1);
 
 -- Povoamento da tabela TURMA
 INSERT INTO TURMA (Cod_Turma) VALUES
@@ -144,19 +158,19 @@ INSERT INTO INTERCLASSE (ID_Comp) VALUES
     (3);
 
 -- Povoamento da tabela CONCORRE
-INSERT INTO CONCORRE (Cod_Turma, ID_Comp, Posi��o) VALUES
+INSERT INTO CONCORRE (Cod_Turma, ID_Comp, Posicao) VALUES
     (101, 1, 2),
     (102, 2, 1),
     (103, 3, 3);
 
 -- Povoamento da tabela PREMIO
-INSERT INTO PREMIO (Posi��o) VALUES
+INSERT INTO PREMIO (Posicao) VALUES
     (1),
     (2),
     (3);
 
 -- Povoamento da tabela PARTICIPA
-INSERT INTO PARTICIPA (CPF_Aluno, Cod_Turma, Per�odo) VALUES
+INSERT INTO PARTICIPA (CPF_Aluno, Cod_Turma, Periodo) VALUES
     ('12345678901', 101, '2023/1'),
     ('23456789012', 102, '2023/1'),
     ('34567890123', 103, '2023/1');
@@ -168,13 +182,13 @@ INSERT INTO DISCIPLINA (Cod_Disciplina, Cod_Curso) VALUES
     (3, 1);
 
 -- Povoamento da tabela PROJETO
-INSERT INTO PROJETO (Cod_Disciplina, n�mero) VALUES
+INSERT INTO PROJETO (Cod_Disciplina, numero) VALUES
     (1, 1),
     (2, 1),
     (3, 2);
 
 -- Povoamento da tabela PERTENCE
-INSERT INTO PERTENCE (Cod_Disciplina, n�mero, CPF_Aluno) VALUES
+INSERT INTO PERTENCE (Cod_Disciplina, numero, CPF_Aluno) VALUES
     (1, 1, '12345678901'),
     (2, 1, '23456789012'),
     (3, 2, '34567890123');
@@ -206,16 +220,3 @@ INSERT INTO PROFESSOR_GRADUACAO (CPF_Professor, local_da_p�s) VALUES
 INSERT INTO PROFESSOR_MESTRADO (CPF_Professor, local_do_mestrado) VALUES
     ('33333333333', 'Universidade X'),
     ('44444444444', 'Universidade Y');
-
-
-
----------------------fim de povoamento e começo de consultas--------------------------------------------------
-
-
-
-
-
-
-
-
-
