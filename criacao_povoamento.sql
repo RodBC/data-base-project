@@ -1,11 +1,9 @@
-
-
 -- Tabela CURSO
 CREATE TABLE CURSO (
-    Cod_Curso INT PRIMARY KEY
+    Cod_Curso INT PRIMARY KEY,
     Nome_Curso VARCHAR(8),
     Centro VARCHAR(8),
-    Area VARCHAR(8),
+    Area VARCHAR(8)
 );
 
 -- Tabela ALUNO
@@ -140,8 +138,8 @@ INSERT INTO ALUNO (CPF_Aluno, Nome_Aluno, End_Rua, End_CEP, Cod_Curso) VALUES
     ('34567890123', 'campos','Rua C', '34567890', 1);
 
 
--- Povoamento da tabela CONTATO
-INSERT INTO CONTATO (CPF_Aluno, Contato) VALUES
+-- Povoamento da tabela CONTATOS
+INSERT INTO CONTATOS (CPF_Aluno, Contato) VALUES
     ('12345678901', '1111111111'),
     ('23456789012', '2222222222'),
     ('34567890123', '3333333333');
