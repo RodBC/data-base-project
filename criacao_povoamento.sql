@@ -77,8 +77,8 @@ CREATE TABLE PROJETO (
     FOREIGN KEY (Cod_Disciplina) REFERENCES DISCIPLINA(Cod_Disciplina)
 );
 
--- Tabela PERTENCE
-CREATE TABLE PERTENCE (
+-- Tabela TRABALHA
+CREATE TABLE TRABALHA (
     Cod_Disciplina INT,
     numero INT,
     CPF_Aluno VARCHAR(11),
@@ -181,8 +181,8 @@ INSERT INTO PROJETO (Cod_Disciplina, numero) VALUES
     (2, 1),
     (3, 2);
 
--- Povoamento da tabela PERTENCE
-INSERT INTO PERTENCE (Cod_Disciplina, numero, CPF_Aluno) VALUES
+-- Povoamento da tabela TRABALHA
+INSERT INTO TRABALHA (Cod_Disciplina, numero, CPF_Aluno) VALUES
     (1, 1, '12345678901'),
     (2, 1, '23456789012'),
     (3, 2, '34567890123');
