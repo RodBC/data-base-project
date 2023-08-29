@@ -64,8 +64,8 @@ CREATE TABLE PARTICIPA (
 -- Tabela DISCIPLINA
 CREATE TABLE DISCIPLINA (
     Cod_Disciplina INT PRIMARY KEY,
-    Sigla VARCHAR(8),
     Cod_Curso INT,
+    Sigla VARCHAR(8),
     FOREIGN KEY (Cod_Curso) REFERENCES CURSO(Cod_Curso)
 );
 
