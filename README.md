@@ -1,4 +1,4 @@
-# Projeto de Banco de Dados do CIn UFPE <img src="https://github.com/RodBC/data-base-project/assets/104574086/23820b8f-343f-44f1-8039-c077fdddd60b" width="80" />
+# Projeto de Banco de Dados<img src="https://github.com/RodBC/data-base-project/assets/104574086/23820b8f-343f-44f1-8039-c077fdddd60b" width="80" />
 
 <h2>Grupo 👨‍💻 </h2>
 
