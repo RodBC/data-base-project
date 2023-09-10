@@ -2,7 +2,7 @@
 
 -- Tabela CURSO
 CREATE TABLE CURSO (
-    Cod_Curso INT PRIMARY KEY
+    Cod_Curso INT PRIMARY KEY,
     Nome_Curso VARCHAR(8),
     Centro VARCHAR(8),
     Area VARCHAR(8),
