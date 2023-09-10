@@ -141,7 +141,7 @@ INSERT INTO ALUNO (CPF_Aluno, Nome_Aluno, End_Rua, End_CEP, Cod_Curso) VALUES
 
 
 -- Povoamento da tabela CONTATO
-INSERT INTO CONTATO (CPF_Aluno, Contato) VALUES
+INSERT INTO CONTATOS (CPF_Aluno, Contato) VALUES
     ('12345678901', '1111111111'),
     ('23456789012', '2222222222'),
     ('34567890123', '3333333333');
