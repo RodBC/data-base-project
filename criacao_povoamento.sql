@@ -56,7 +56,7 @@ CREATE TABLE PARTICIPA (
     CPF_Aluno VARCHAR(11),
     Cod_Turma INT,
     Periodo VARCHAR(255),
-    PRIMARY KEY (CPF_Aluno, Cod_Turma),
+    PRIMARY KEY (CPF_Aluno, Cod_Turma, Periodo),
     FOREIGN KEY (CPF_Aluno) REFERENCES ALUNO(CPF_Aluno),
     FOREIGN KEY (Cod_Turma) REFERENCES TURMA(Cod_Turma)
 );
