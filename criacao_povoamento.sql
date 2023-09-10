@@ -54,7 +54,7 @@ CREATE TABLE PARTICIPA (
     CPF_Aluno VARCHAR(11),
     Cod_Turma INT,
     Periodo VARCHAR(255),
-    PRIMARY KEY (CPF_Aluno, Cod_Turma),
+    PRIMARY KEY (CPF_Aluno, Cod_Turma, Periodo),
     FOREIGN KEY (CPF_Aluno) REFERENCES ALUNO(CPF_Aluno),
     FOREIGN KEY (Cod_Turma) REFERENCES TURMA(Cod_Turma)
 );
@@ -138,7 +138,11 @@ INSERT INTO ALUNO (CPF_Aluno, Nome_Aluno, End_Rua, End_CEP, Cod_Curso) VALUES
     ('34567890123', 'campos','Rua C', '34567890', 1);
 
 
+<<<<<<< HEAD
 -- Povoamento da tabela CONTATOS
+=======
+-- Povoamento da tabela CONTATO
+>>>>>>> 97ce69987961b21a8dadf5b48cd331f9532358be
 INSERT INTO CONTATOS (CPF_Aluno, Contato) VALUES
     ('12345678901', '1111111111'),
     ('23456789012', '2222222222'),
